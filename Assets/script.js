@@ -7,20 +7,22 @@ var saveBtn = $('#saveBtn');
 var plannerTime = $('#plannerItem')
 var currentTime = moment().format("hh:mm:ss");
 
-//If the current time is equal to (id9) 
-//make plannerItem class present
-//else if the current time is less than (id9)
-//make plannerItem class past
-//else if current time is greater than (id9)
-//make plannerItem class future
+var currentHour = moment().format("hh")
+console.log(currentHour)
+console.log($(".time-block").data())
 
-if (currentTime === $('9')) {
-    $('#row time-block').format('#present')
+var timeBlockElementArray = $(".time-block")
+for (var i = 0; i < timeBlockElementArray.length; i++) {
+    console.log($(timeBlockElementArray[i]).data())
+    document.setAttribute($(timeBlockElementArray[i].data()))
+}
+if (currentHour === $('.hr9') {
+    $('#row time-block').attr("class", 'present')
 }
 
 //When you open the page the current day is displayed at the top of the page
 var time = moment().format("MMM Do, YYYY");
 $('#currentDay').text(time)
 
-
+// document.setAttribute($(timeBlockElementArray[i].data()))
 
