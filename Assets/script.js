@@ -15,14 +15,17 @@ $(".saveBtn").each(function (i) {
     }
   }
 //sets the colors of each time block, grey if it is past, red if it is present and green if it is in the future
-$(".time-block").each(function (i, div) {
-  console.log($(div).attr("data-time"));
+$(".description").each(function (i, div) {
+  console.log($(div).attr("data-time"),"dt");
+  console.log(currentHour,"ch")
   if (currentHour === $(div).attr("data-time")) {
-    $(div).attr("class", "present");
+    console.log(currentHour)
+    console.log($(div).attr("data-time"))
+    $(div).addClass("present");
   } else if (currentHour > $(div).attr("data-time")) {
-    $(div).attr("class", "past");
+    $(div).addClass("past");
   } else if (currentHour < $(div).attr("data-time")) {
-    $(div).attr("class", "future");
+    $(div).addClass("future");
   }
  
   //When you open the page the current day is displayed at the top of the page
@@ -44,10 +47,4 @@ $(".time-block").each(function (i, div) {
   });
   renderLastRegistered();
 
-  
-
-  // userFormEl.addEventListener('saveBtn', formSubmitHandler);
-  // if (currentHour === $(".time-block")) {
-//   $(".time-block").attr("data-time");
-// }
 });
